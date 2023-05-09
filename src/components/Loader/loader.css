@@ -1,0 +1,22 @@
+.loader-screen{
+    height: 75vh;
+}
+.loader {
+    width: 68px;
+    height: 68px;
+    background: var(--color-black);
+    border-radius: 50%;
+    position: relative;
+    animation: skLinRotate 1s ease-in-out infinite alternate;
+  }
+  .loader:after{
+    content:"";
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: var(--color-white);
+  }
+  @keyframes skLinRotate {
+    95% ,100% { transform: rotate(840deg) }
+  }

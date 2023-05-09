@@ -1,0 +1,112 @@
+.app{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    background-color: var(--color-body);
+}
+.flex__center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headtxt{
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 2rem;
+}
+.title-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.links{
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    border-bottom: 1px solid var(--color-white);
+    transition: .2s;
+}
+.links:hover{
+    transform: scale(1.03);
+}
+.cards-container{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.card{
+    width: calc(33.70% - 1rem);
+    background-color: var(--color-black);
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: .2s;
+}
+.card:last-of-type{
+    margin-right: auto;
+}
+.card-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+.card-bottom{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.card:hover{
+    transform: scale(1.02);
+    box-shadow: 1px 1px 12px var(--color-black);
+}
+.select-section{
+    margin-left: auto;
+    padding-top: 2rem;
+}
+.select-section select {
+    width: 19rem;
+    height: 3rem;
+    font-size: 1rem;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: 1px solid #342727;
+    border-radius: 1.5rem;
+    padding: 10px;
+}
+.select-section  select::-webkit-scrollbar {
+    background-color: var(--color-white);
+    width: .8rem;
+}
+.select-section select::-webkit-scrollbar-thumb{
+    background-color: var(--color-body);
+    border-radius: .5rem;
+}
+
+
+/* ===Responsiveness===== */
+
+@media screen and (max-width:1150px){
+    .headtxt{
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width : 600px){
+    .headtxt{
+        font-size: 1.3rem;
+    }
+    .links{
+        font-size: 0.6rem;
+    }
+    .card{
+        width: 100%;
+    }
+    .select-section{
+        margin-right: auto;
+    }
+}

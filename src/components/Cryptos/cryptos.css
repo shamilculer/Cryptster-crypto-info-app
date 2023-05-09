@@ -1,0 +1,20 @@
+.search-section{
+    margin-left: auto;
+    padding-top: 2rem;
+}
+.search-section > input{
+    width: 19rem;
+    height: 3rem;
+    background: black;
+    border: 1px solid #342727;
+    border-radius: 2rem;
+    font-size: 1rem;
+    padding: 1rem;
+    color: white;
+}
+.search-icon{
+    font-size: 1.2rem;
+    position: relative;
+    right: 2.5rem;
+    top: 3px;
+}

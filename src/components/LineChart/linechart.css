@@ -1,0 +1,34 @@
+.chart-heading-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.chart-heading-container > h2 {
+    font-size: 1.8rem;
+}
+.chart-heading-container > span {
+    font-size: 1.1rem;
+}
+.chart{
+    width: 100%;
+    background-color: var(--color-black);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+/* =====Responsive======== */
+
+@media screen and (max-width : 600px){
+    .chart-heading-container{
+        flex-direction: column;
+        align-items: start;
+        gap: 1rem;
+    }
+    .chart-heading-container > h2 {
+        font-size: 1.5rem;
+    }
+    canvas{
+        width: 100%;
+    }
+}

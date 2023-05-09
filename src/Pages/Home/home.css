@@ -1,0 +1,59 @@
+.crypto__stats{
+    background-color: var(--color-black);
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+}
+.stats{
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+.stat{
+    width:29%;
+    flex-direction: column;
+    gap: 1rem;
+}
+.stats:last-of-type::after{
+    content: "";
+    width: 29%;
+}
+.stat h3{
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: rgb(155, 149, 149);
+    font-size: 1.2rem;
+}
+.stat > span{
+    font-size: 1.7rem;
+}
+
+
+/* ===Responsive======= */
+
+
+@media screen and (max-width:1150px){
+    .crypto__stats{
+        padding:1.2rem;
+    }
+    .stats{
+        gap: 2rem;
+    }
+    .stat h3{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width : 600px){
+    .crypto__stats{
+        padding:1rem;
+    }
+    .stats{
+        gap: 1rem;
+    }
+    .stat h3{
+        font-size: .5rem;
+    }
+    .stat > span{
+        font-size: 1rem;
+    }
+    
+}
