@@ -1,5 +1,5 @@
 import Sidebar from "./Sidebar/Sidebar";
-import Cryptos from "./cryptos/Cryptos";
+import Cryptos from "./Cryptos/Cryptos";
 import CryptoCard from "./CryptoCard/CryptoCard";
 import NewsContainer from "./NewsContainer/NewsContainer";
 import NewsCard from "./NewsCard/NewsCard";

@@ -1,21 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./crypto.css"
 import { useParams } from 'react-router-dom'
 import millify from 'millify'
 import {AiFillMoneyCollect, AiFillDollarCircle, AiFillFund, AiFillExclamationCircle, AiFillStop, AiFillTrophy, AiOutlineNumber, AiFillThunderbolt, AiFillCheckCircle} from "react-icons/ai"
 import { BsArrowRight } from 'react-icons/bs'
-
-
+import { useDispatch } from 'react-redux'
+import { closeNavBar } from '../../app/Slices/navbarSlice/navbarSlice'
 import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from '../../Services/cryptoApi'
-
 import {Loader, LineChart, Stats} from "../../components"
 
 const Crypto = () => {
+  const dispatch = useDispatch()
   const {coinId} = useParams()
   const [timePeriod, setTimePeriod] = useState("7d")
   const {data , isFetching} = useGetCryptoDetailsQuery(coinId)
   const {data : coinHistory} = useGetCryptoHistoryQuery({coinId ,timePeriod})
   const cryptoDetails = data?.data?.coin
+
+  useEffect(() =>{
+    dispatch(closeNavBar())
+  },[])
 
   const timePeriods = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
 
@@ -34,6 +38,7 @@ const Crypto = () => {
     { title: 'Total Supply', value: `$ ${cryptoDetails?.supply?.total && millify(cryptoDetails?.supply?.total)}`, icon: <AiFillExclamationCircle /> },
     { title: 'Circulating Supply', value: `$ ${cryptoDetails?.supply?.circulating && millify(cryptoDetails?.supply?.circulating)}`, icon: <AiFillExclamationCircle /> },
   ];
+
 
 
   return (
@@ -80,9 +85,9 @@ const Crypto = () => {
             <section className='coin-links'>
               <h1 className='headtxt'>{cryptoDetails.name} Links</h1>
               <div className='links-container'>
-                {cryptoDetails.links?.map(link => (
+                {cryptoDetails.links?.map((link , i) => (
                   
-                    <a className='links' style={{fontWeight : "700",margin : ".8rem"}} href={link.url} target='_blank' rel="noreffer">{link.type.toUpperCase()} <BsArrowRight /></a>
+                    <a key={i} className='links' style={{fontWeight : "700",margin : ".8rem"}} href={link.url} target='_blank' rel="noreffer">{link.type.toUpperCase()} <BsArrowRight /></a>
                   
                 ))}
               </div>

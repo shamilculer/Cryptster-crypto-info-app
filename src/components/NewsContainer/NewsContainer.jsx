@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
 import { useGetNewsQuery } from '../../Services/newsApi'
 import { useGetCryptosQuery } from '../../Services/cryptoApi'
 import {NewsCard, Loader} from '../index'

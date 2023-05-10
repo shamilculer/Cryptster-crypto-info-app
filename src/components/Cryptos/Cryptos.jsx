@@ -1,11 +1,7 @@
 import React, { useState,useEffect } from 'react'
-
 import "./cryptos.css"
-
 import { CryptoCard, Loader } from '../index'
 import {BsSearch}  from "react-icons/bs"
-
-
 import { useGetCryptosQuery } from '../../Services/cryptoApi'
 
   const Cryptos = ({simplified}) => {

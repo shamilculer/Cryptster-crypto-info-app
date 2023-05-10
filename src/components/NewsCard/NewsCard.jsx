@@ -1,6 +1,5 @@
 import React from 'react'
 import "./newscard.css"
-
 import moment from 'moment/moment'
 
 const demoImg = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News'

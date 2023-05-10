@@ -1,12 +1,9 @@
 import React from 'react'
 import "./mobilenav.css"
-
 import { BiMenu } from "react-icons/bi"
 import { Link } from 'react-router-dom'
-
 import { useSelector,useDispatch } from 'react-redux'
 import { navBarChange } from '../../app/Slices/navbarSlice/navbarSlice'
-
 import logo from "../../assets/cryptster.png"
 
 const MobileNav = () => {

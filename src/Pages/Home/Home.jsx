@@ -1,14 +1,21 @@
-import React from 'react'
+import React , {useEffect} from 'react'
 import "./home.css"
 import {BsArrowRight} from "react-icons/bs"
 import millify from 'millify'
 import { useGetCryptosQuery } from '../../Services/cryptoApi'
 import { Link } from 'react-router-dom'
 import { Cryptos, NewsContainer, Loader } from '../../components'
+import { useDispatch } from 'react-redux'
+import { closeNavBar } from '../../app/Slices/navbarSlice/navbarSlice'
 
 
 
 const Home = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() =>{
+    dispatch(closeNavBar())
+  },[])
 
   const {data, isFetching } = useGetCryptosQuery(10)
 
